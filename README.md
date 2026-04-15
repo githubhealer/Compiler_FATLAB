@@ -1,230 +1,31 @@
-﻿# Compiler_FATLAB
+# Compiler_FATLAB
+ This repo consists of answers for the following questions
+ Ex: 1
+a) Write a lexical analyzer program using C taking user input
+b) Write a lexical analyzer program using C, taking input from a file/reading a file's
+contents.
 
-A comprehensive repository containing solutions for compiler design and lexical analysis exercises.
+Ex: 2
 
----
+a)
+b) Write a lexical analyzer program using LEX To perform addition of two numbers
+c) Write a lexical analyzer program using LEX
+d) Pattern Matching using Lex (a/b)*abb
 
-## 📋 Repository Structure
+Ex: 3
 
-### Exercise 1: Lexical Analysis
-**Objective:** Implement a lexical analyzer in C
+a) Write a C program for a recursive descent parser.
+b) Write a C program for a predictive parser.
 
-#### a) Lexical Analyzer with User Input
-- Reads tokens from user input
-- Identifies keywords, identifiers, operators, and delimiters
-- Displays token classification
+Ex: 4
+a) Write a YACC program Addition of two numbers
+b) Calculator Implementation using lex and yacc
 
-#### b) Lexical Analyzer from File
-- Reads and processes input from an external file
-- Performs token analysis on file contents
-- Generates token output
+Ex:5
 
----
+a) A lex and yacc program to implement type checking
+b) Write a C program to implement Type checking
 
-### Exercise 2: Lexical Analysis Using LEX
-**Objective:** Implement lexical analyzers using LEX tool
-
-#### a) LEX Program Basics
-- Introduction to LEX syntax and structure
-- Token recognition patterns
-- Rule definitions
-
-#### b) Addition of Two Numbers
-- LEX program to recognize and process numeric tokens
-- Implements addition of two input numbers
-
-#### c) Extended LEX Program
-- Advanced pattern matching
-- Multiple token types recognition
-- Semantic action implementation
-
-#### d) Pattern Matching - (a/b)*abb
-- Regular expression pattern: (a/b)*abb
-- Recognizes sequences ending with "abb"
-- Counts and displays matched patterns
-
----
-
-### Exercise 3: Parsing Techniques
-**Objective:** Implement parser algorithms in C
-
-#### a) Recursive Descent Parser
-- Top-down parsing approach
-- Leftmost derivation
-- Recursive function-based parsing
-
-#### b) Predictive Parser (LL Parser)
-- Lookahead parsing strategy
-- Parsing table construction
-- Single token lookahead implementation
-
----
-
-### Exercise 4: YACC (Yet Another Compiler Compiler)
-**Objective:** Use YACC for syntax analysis and code generation
-
-#### a) YACC Program - Addition of Two Numbers
-- Grammar definition
-- Semantic rules for addition
-- Automatic parser generation
-
-#### b) Calculator Implementation
-- Full calculator using LEX and YACC
-- Support for arithmetic operations: +, -, *, /
-- Expression evaluation
-
----
-
-### Exercise 5: Type Checking
-**Objective:** Implement type checking mechanisms
-
-#### a) LEX and YACC Type Checking
-- Variable type declaration recognition
-- Type compatibility checks
-- Type mismatch error reporting
-
-#### b) C Program for Type Checking
-- Manual type checking implementation
-- Symbol table management
-- Type inference
-
----
-
-## 🔧 Exercise 5a: LEX Program to Display Name
-
-### Overview
-This LEX program is a lexical analyzer designed to recognize and display names from user input.
-
-### File: lab5a.lex
-
-``lex
-%{
-#include <stdio.h>
-%}
-
-%%
-[A-Za-z]+           { printf("Name: %s\n", yytext); }
-[0-9]+              { printf("Number: %s\n", yytext); }
-[ \t]               { /* Ignore whitespace */ }
-\n                  { /* Ignore newline */ }
-.                   { printf("Other: %s\n", yytext); }
-
-%%
-
-int main() {
-    printf("Enter text to analyze (Ctrl+D to exit):\n");
-    yylex();
-    return 0;
-}
-
-int yywrap() {
-    return 1;
-}
-``
-
-### How It Works:
-1. **Pattern [A-Za-z]+**: Matches sequences of letters (names) and prints them
-2. **Pattern [0-9]+**: Matches numeric sequences and identifies them as numbers
-3. **Pattern [ \t]**: Skips whitespace characters
-4. **Pattern \n**: Skips newline characters
-5. **Pattern .**: Matches any other character
-
-### Compilation & Execution:
-
-``ash
-# Generate C code from LEX specification
-lex lab5a.lex
-
-# Compile the generated C file
-gcc lex.yy.c -o name_analyzer -lfl
-
-# Run the program
-./name_analyzer
-``
-
-### Sample Input & Output:
-``
-Input:
-John Doe 25 Alice
-
-Output:
-Name: John
-Name: Doe
-Number: 25
-Name: Alice
-``
-
----
-
-## 🛠️ Compilation Instructions
-
-### For LEX Programs:
-``ash
-lex <filename>.lex
-gcc lex.yy.c -o <output> -lfl
-./<output>
-``
-
-### For Recursive Descent Parser:
-``ash
-gcc <filename>.c -o <output>
-./<output>
-``
-
-### For YACC Programs:
-``ash
-yacc -d <filename>.y
-lex <filename>.l
-gcc y.tab.c lex.yy.c -o <output> -ly -ll
-./<output>
-``
-
----
-
-## 📚 Key Concepts Covered
-
-| Concept | Exercise |
-|---------|----------|
-| Lexical Analysis | Ex 1, Ex 2 |
-| Tokenization | Ex 1, Ex 2 |
-| Pattern Matching | Ex 2d |
-| Parsing | Ex 3 |
-| Syntax Analysis | Ex 4 |
-| Type Checking | Ex 5 |
-| LEX Tool | Ex 2, Ex 4b, Ex 5a |
-| YACC Tool | Ex 4, Ex 5a |
-| Recursive Functions | Ex 3a |
-| Predictive Parsing | Ex 3b |
-
----
-
-## 🎯 Learning Objectives
-
-- Understand lexical analysis fundamentals
-- Master LEX tool for token recognition
-- Implement parsing algorithms
-- Use YACC for compiler construction
-- Implement type checking mechanisms
-- Build complete calculators and interpreters
-
----
-
-## 📝 Notes
-
-- All programs follow standard C conventions
-- LEX patterns use regular expression syntax
-- YACC uses BNF grammar notation
-- Each exercise builds on previous concepts
-
----
-
-## 🔗 References
-
-- [LEX Manual](https://en.wikipedia.org/wiki/Lex_(software))
-- [YACC Manual](https://en.wikipedia.org/wiki/Yacc)
-- Compiler Design Principles (Aho, Lam, Sethi, Ullman)
-
----
-
-**Last Updated:** April 15, 2026
-
+Write a lexical analyzer program using LEX To display name
+Format this and put in readme.md dont change any text or do any code pls 
+just plain text given here
